@@ -1,0 +1,6 @@
+  IP address     Client Identifier (type)     Type      Hardware address      State       Lease expiration
+---------------- -------------------------- ----------- ------------------ ------------- --------------------
+192.168.93.5       00:d0:50:20:11:c8 (hwaddr) dynamic     00:d0:50:20:11:c8  allocated     Oct 18 2021 00:04:42
+192.168.93.6       00:d0:50:20:1b:de (hwaddr) dynamic     00:d0:50:20:1b:de  allocated     Oct 17 2021 23:10:36
+192.168.152.2      e8:28:c1:93:e1:40 (hwaddr) dynamic     e8:28:c1:93:e1:40  allocated     Oct 18 2021 07:29:54
+192.168.152.3      e8:28:c1:93:7a:80 (hwaddr) dynamic     e8:28:c1:93:7a:80  allocated     Oct 17 2021 13:13:36

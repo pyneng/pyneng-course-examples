@@ -1,0 +1,7 @@
+Value intf (\S+)
+Value desc (.+)
+
+Start
+  ^interface ${intf}
+  ^ +description ${desc}
+  ^\s*$$ -> Record

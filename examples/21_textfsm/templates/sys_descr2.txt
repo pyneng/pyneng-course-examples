@@ -1,0 +1,25 @@
+Value id_type (.+)
+Value chassis_id (.+)
+Value port_type (.+)
+Value port_id (.+)
+Value List port_desc (.+)
+Value sys_name (.+)
+Value List sys_desc (.+)
+
+
+Start
+  ^\.*Chassis Id Subtype\s+: ${id_type}$$
+  ^\.*Chassis Id\s+: ${chassis_id}$$
+  ^\.*PortId Subtype\s+: ${port_type}$$
+  ^\.*Port Id\s+: ${port_id}$$
+  ^\.*Port Description\s+: ${port_desc}$$ -> PortDesr
+
+PortDesr
+  ^\s+${port_desc}
+  ^System Name\s+: ${sys_name} -> Continue
+  ^System Name -> SystemDesr
+
+SystemDesr
+  ^System Description\s+: ${sys_desc}
+  ^\s+${sys_desc}
+  ^Age -> Record Start

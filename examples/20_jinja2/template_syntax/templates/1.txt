@@ -1,0 +1,10 @@
+        <context name="world">
+            {% for item in dialplan %}
+            <extension name="{{ item.extension_name }}">
+                {% for item_ex in item.extension_group %}
+                <condition field="destination_number" expression="{{ item_ex.number }}">
+                    <action application="{{ item_ex.action_app }}"/>
+                </condition>
+                {% endfor %}
+            {% endfor %}
+        </context>

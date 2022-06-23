@@ -1,0 +1,7 @@
+Template, Hostname, Vendor, Command
+sh_cdp_n_d.txt, .*, cisco_ios, sh[[ow]] cdp ne[[ighbors]] de[[tail]]
+sh_ip_int_br.txt, .*, cisco_ios, sh[[ow]] ip int[[erface]] br[[ief]]
+sh_ip_int_br.txt, .*, hp, sh[[ow]] ip int[[erface]] br[[ief]]
+show_int_counter_errors1.template:show_int_counter_errors2.template, .*, cisco_ios, sh[[ow]] int[[erfaces]] cou[[nter]] er[[rors]]
+1.txt:2.txt, .*, cisco_ios, sh[[ow]] mac
+

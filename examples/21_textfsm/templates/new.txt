@@ -1,0 +1,8 @@
+Value Key localintf (\S+)
+Value localcircuit (Eth VLAN \d+)
+Value destaddress (\S+)
+Value vcid (\d+)
+Value status (\S+)
+
+Start
+  ^${localintf}\s+${localcircuit}\s+${destaddress}\s+${vcid}\s+${status} -> Record

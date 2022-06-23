@@ -1,0 +1,47 @@
+show port 1/1/24 ethernet lldp remote-info 
+
+==============================================================================
+Link Layer Discovery Protocol (LLDP) Port Information
+==============================================================================
+Port 1/1/24 Bridge nearest-bridge Remote Peer Information
+-------------------------------------------------------------------------------
+Remote Peer Index 2 at timestamp 09/04/2020 04:08:47:
+Supported Caps        : bridge router
+Enabled Caps          : bridge router
+Chassis Id Subtype    : 4 (macAddress)
+Chassis Id            : 0C:54:B9:8A:7C:DD
+PortId Subtype        : 7 (local)
+Port Id               : 35815424
+Port Description      : 1/1/5, 10/100/Gig Ethernet SFP, "SM-VR-Processor-
+                        BS33960_GE1/1/24"
+System Name           : SAR-VR-Processor
+System Description    : TiMOS-B-7.0.R5 both/hops ALCATEL SAR 7705 Copyright
+                        (c) 2000-2016 Alcatel-Lucent.
+                        All rights reserved. All use subject to applicable
+                        license agreements.
+                        Built on Wed Feb 24 10:56:23 EST 2016 by builder in /
+                        rel7.0/b1/R5/panos/main
+Age                   : 37886934 seconds
+
+
+Port 1/1/24 Bridge nearest-non-tpmr Remote Peer Information
+-------------------------------------------------------------------------------
+No remote peers found
+
+Port 1/1/24 Bridge nearest-customer Remote Peer Information
+-------------------------------------------------------------------------------
+No remote peers found
+[{'id_type': '4 (macAddress)',
+  'chassis_id': '0C:54:B9:8A:7C:DD',
+  'port_type': '7 (local)',
+  'port_id': '35815424',
+  'port_desc': ['1/1/5, 10/100/Gig Ethernet SFP, "SM-VR-Processor-',
+                'BS33960_GE1/1/24"'],
+  'sys_name': '',
+  'sys_desc': ['TiMOS-B-7.0.R5 both/hops ALCATEL SAR 7705 Copyright',
+               '(c) 2000-2016 Alcatel-Lucent.',
+               'All rights reserved. All use subject to applicable',
+               'license agreements.',
+               'Built on Wed Feb 24 10:56:23 EST 2016 by builder in /',
+               'rel7.0/b1/R5/panos/main']}]
+

@@ -1,0 +1,11 @@
+Value List sys_desc (.+)
+Value age (\d+)
+
+Start
+  ^System Description\s+: ${sys_desc} -> SystemDesr
+
+SystemDesr
+  ^\s+${sys_desc}
+  ^Age.+\s${age} -> Continue.Record
+  ^Age -> Start
+

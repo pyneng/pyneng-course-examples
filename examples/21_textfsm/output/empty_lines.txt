@@ -1,0 +1,5 @@
+interface port-channel10
+  description ASA5585X-WWW-1 Inside
+
+interface port-channel11
+  description ASA-WWW-1 DMZ
