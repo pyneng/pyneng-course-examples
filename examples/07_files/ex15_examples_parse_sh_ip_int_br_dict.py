@@ -1,23 +1,29 @@
+"""
+{'FastEthernet0/0': '15.0.15.1',
+ 'FastEthernet0/1': '10.0.12.1',
+ 'FastEthernet0/2': '10.0.13.1',
+ 'FastEthernet0/3': None,
+ 'Loopback0': '10.1.1.1',
+ 'Loopback100': '100.0.0.1'}
+"""
 from pprint import pprint
 
+intf_ip_dict = {}
 
-result = {}
-
-with open("show_output/sh_ip_int_br.txt") as f:
+file = "show_output/sh_ip_int_br.txt"
+with open(file) as f:
     for line in f:
-        words = line.split()
-        if len(words) >= 6 and words[0][-1].isdigit():
+        if "up" in line or "down" in line:
+            words = line.split()
             intf = words[0]
             ip = words[1]
-            # intf, ip = words[:2]
-            print(intf, ip)
             if ip == "unassigned":
-                result[intf] = None
+                intf_ip_dict[intf] = None
             else:
-                result[intf] = ip
+                intf_ip_dict[intf] = ip
 
-pprint(result)
+pprint(intf_ip_dict)
 
-for intf, ip in result.items():
+for intf, ip in intf_ip_dict.items():
     if ip:
         print(ip)
