@@ -1,1 +1,3 @@
-# Примеры кода из курса [Python для сетевых инженеров](https://natenka.github.io/pyneng-course/)
+## Примеры кода из курса [Python для сетевых инженеров](https://natenka.github.io/pyneng-course/)
+
+## Репозиторий в процессе заполнения! Примеры будут меняться
