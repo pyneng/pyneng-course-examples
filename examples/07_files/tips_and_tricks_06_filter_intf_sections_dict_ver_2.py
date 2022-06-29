@@ -17,25 +17,6 @@ from pprint import pprint
     ],
 }
 
-
-result = {}
-
-with open("configs/config_r1.txt") as src:
-    start = False
-    for line in src:
-        if line.startswith("interface"):
-            intf = line.split()[-1]
-            result[intf] = []
-            start = True
-        elif line.startswith(" "):
-            if start:
-                result[intf].append(line.strip())
-        else:
-            start = False
-
-pprint(result)
-
-
 result = {}
 
 with open("configs/config_r1.txt") as src:
