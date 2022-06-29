@@ -45,6 +45,8 @@ xconnect logging redundancy
 !
 !
 !
+control-plane
+ timeout 90
 !
 !
 interface Loopback0
