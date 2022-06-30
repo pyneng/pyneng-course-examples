@@ -1,0 +1,16 @@
+!
+hostname PE_r2
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 10.2.2.2 255.255.255.255
+!
+interface GigabitEthernet0/0
+ ip address 10.254.2.2 255.255.255.0
+!
+interface GigabitEthernet0/1
+ ip address 10.255.2.2 255.255.255.0
+!
