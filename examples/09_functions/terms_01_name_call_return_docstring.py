@@ -18,7 +18,7 @@ def check_passwd(user, passwd, min_len=8, unique_numbers=3):
         return False
     elif user.lower() in passwd.lower():
         return False
-    elif len(set(passwd) & numbers)) < unique_numbers:
+    elif len(set(passwd) & numbers) < unique_numbers:
         return False
     else:
         return True

@@ -21,11 +21,12 @@ def config_interface(intf_name, ip_address, mask):
 pprint(config_interface("Fa0/1", "10.0.1.1", "255.255.255.0"))
 
 arg1 = ["Fa0/1", "10.0.1.1", "255.255.255.0"]
-config_interface(arg1) # ERROR
+# config_interface(arg1) # ERROR
 
 #                    asterisk
 #                       |
 pprint(config_interface(*arg1))
+# pprint(config_interface("Fa0/1", "10.0.1.1", "255.255.255.0"))
 
 
 for info in interfaces_info:

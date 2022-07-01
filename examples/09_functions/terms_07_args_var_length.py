@@ -1,3 +1,4 @@
+
 def sum_arg(*args):
     print(args)
     sum_num = 0

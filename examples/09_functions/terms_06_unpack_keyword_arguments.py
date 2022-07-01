@@ -1,3 +1,4 @@
+
 def check_passwd(username, password, min_length=8, check_username=True):
     if len(password) < min_length:
         return False

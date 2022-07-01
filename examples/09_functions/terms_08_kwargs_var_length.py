@@ -1,3 +1,5 @@
+
+
 def sum_arg(**kwargs):
     print(f"{kwargs=}")
     sum_num = 0
