@@ -5,3 +5,22 @@
 # * глобальной - переменные, которые определены вне функции
 # * локальной - переменные, которые определены внутри функции
 
+a = 10
+b = 5
+
+
+def my_sum(x, y):
+    log_line = f"calling sum({x}, {y})"
+    print(log_line)
+    return x + y
+
+
+def draw_line():
+    sym = "-"
+    repeat = 40
+    return sym * repeat
+
+
+result = my_sum(a, b)
+line = draw_line()
+

@@ -7,3 +7,21 @@
 # G (global) - в глобальной (в скрипте)
 # B (built-in) - во встроенной (зарезервированные значения Python)
 
+
+a = 10
+b = 5
+
+
+def my_sum(x, y):
+    result = x + y
+
+    def draw_line():
+        print("-" * 40)
+        print(f"{result=}")
+        print("-" * 40)
+
+    draw_line()
+    return result
+
+
+result = my_sum(a, b)
