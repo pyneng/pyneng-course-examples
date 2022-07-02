@@ -1,6 +1,6 @@
 from pprint import pprint
 import netmiko
-from check_password import check_passwd
+from ex03_check_passwd import check_passwd
 
 
 # ключевые аргументы переменной длины

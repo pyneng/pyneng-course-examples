@@ -1,4 +1,4 @@
-from check_password_db import select_correct_passwd
+from ex10_check_passwd_db import select_correct_passwd
 from pprint import pprint
 
 data = [

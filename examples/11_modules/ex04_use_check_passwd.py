@@ -1,21 +1,12 @@
 """
 Функции для подключения к оборудованию
-
-
 """
 from pprint import pprint
-from ex01_check_passwd import check_passwd
+from ex03_check_passwd import check_passwd
 import sys
 
 
-def printprefix():
-    print(sys.prefix)
-
-
 def select_correct_passwd(check_data, **kwargs):
-    """
-    ...
-    """
     correct_password = []
     incorrect_password = []
 
@@ -26,7 +17,6 @@ def select_correct_passwd(check_data, **kwargs):
             correct_password.append([user, passwd])
         else:
             incorrect_password.append([user, passwd])
-    pprint(locals())
     return correct_password, incorrect_password
 
 

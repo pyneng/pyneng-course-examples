@@ -13,10 +13,9 @@ def check_passwd(
     else:
         return True
 
-print("##########")
 
-if __name__ == "__main__":
 # не выполнять при импорте
+if __name__ == "__main__":
     print("Тестовая проверка")
     print(check_passwd("user1", "sdkhf24352e8"))
     print(check_passwd("user2", "sdkhf24352e8"))
