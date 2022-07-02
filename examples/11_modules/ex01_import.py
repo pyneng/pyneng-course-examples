@@ -12,13 +12,9 @@ def my_sum(a, b):
     return a + b
 
 
-def main():
+# if module called directly:
+if __name__ == "__main__":
     print("Start".center(50, "="))
     my_sum(1, 2)
     pprint(vlans)
     print("End".center(50, "="))
-
-
-# if module called directly:
-if __name__ == "__main__":
-    main()
