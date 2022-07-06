@@ -1,8 +1,8 @@
 from pprint import pprint
 
 items = ["10", "20", "30", "mode", "1", "11", "100", "trunk"]
-vlans = []
 
+vlans = []
 for vl in items:
     if vl.isdigit():
         vlans.append(int(vl))
@@ -10,7 +10,6 @@ for vl in items:
 pprint(vlans)
 
 # list comp
-items = ["10", "20", "30", "mode", "1", "11", "100", "trunk"]
+
 vlans = [int(vl) for vl in items if vl.isdigit()]
 pprint(vlans)
-

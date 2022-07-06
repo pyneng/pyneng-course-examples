@@ -1,0 +1,18 @@
+!
+!
+hostname PE_r1
+!
+!
+interface Loopback0
+ ip address 10.1.1.1 255.255.255.255
+!
+interface GigabitEthernet0/0
+ description To PE_r3 GigabitEthernet0/0
+ bandwidth 100000
+ ip address 10.0.13.1 255.255.255.0
+ mpls traffic-eng tunnels
+ ip rsvp bandwidth 100000 10000
+!
+interface GigabitEthernet0/1
+ no ip address
+!
