@@ -1,6 +1,5 @@
 commands = [
     "switchport mode access",
-    "switchport access vlan",
     "switchport nonegotiate",
     "spanning-tree portfast",
     "spanning-tree bpduguard enable",
@@ -8,7 +7,7 @@ commands = [
 
 for cmd in commands:
     if "vlan" in cmd:
-        print("Нашлась команда с vlan", cmd)
+        print("Нашли команду с vlan")
         break
-else:
+else: # no break
     print("В списке commands нет команды с vlan")
