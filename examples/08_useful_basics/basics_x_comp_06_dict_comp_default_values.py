@@ -1,15 +1,15 @@
 from pprint import pprint
 
-items = ["10", "20", "10", "mode", "1", "11", "20", "trunk"]
+devices = ["london_sw1", "london_sw2", "liverpool_sw1", "birmingham_sw1"]
 
-vlans = set()
-for vl in items:
-    if vl.isdigit():
-        vlans.add(int(vl))
+vlans = {}
+for key in devices:
+    vlans[key] = None
 
 pprint(vlans)
 
-# set comp
+vlans = dict.fromkeys(devices)
+pprint(vlans)
 
-vlans = {int(vl) for vl in items if vl.isdigit()}
+vlans = {key: None for key in devices}
 pprint(vlans)
