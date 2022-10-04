@@ -9,18 +9,19 @@
 """
 from pprint import pprint
 
-result = []
+
+def parse_sh_ip_int_br(output):
+    result_list = []
+    for line in output.split("\n"):
+        if "up" in line or "down" in line:
+            intf, ip, *_, status = line.split()
+            result_list.append([intf, ip, status])
+    return result_list
+
+
 
 file = "show_output/sh_ip_int_br.txt"
 with open(file) as f:
-    for line in f:
-        if "up" in line or "down" in line:
-            words = line.split()
-            intf = words[0]
-            ip = words[1]
-            status = words[-1]
-            data = [intf, ip, status]
-            result.append(data)
-
-pprint(result)
-
+    content = f.read()
+    result = parse_sh_ip_int_br(content)
+    pprint(result)
