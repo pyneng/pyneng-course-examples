@@ -14,12 +14,17 @@ def get_intf_ip_dict_from_cfg(filename):
     return intf_ip_dict
 
 
-r1 = get_intf_ip_dict_from_cfg("config_r1.txt")
+r1 = get_intf_ip_dict_from_cfg("configs/config_r1.txt")
 pprint(r1)
-r2 = get_intf_ip_dict_from_cfg("config_r2.txt")
+r2 = get_intf_ip_dict_from_cfg("configs/config_r2.txt")
 pprint(r2)
 
-config_list = ["config_r1.txt", "config_r2.txt", "config_r3.txt", "config_sw1.txt"]
+config_list = [
+    "configs/config_r1.txt",
+    "configs/config_r2.txt",
+    "configs/config_r3.txt",
+    "configs/config_sw1.txt",
+]
 for cfg in config_list:
     result = get_intf_ip_dict_from_cfg(cfg)
     pprint(result)
