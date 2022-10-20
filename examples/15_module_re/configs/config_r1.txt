@@ -107,7 +107,7 @@ router bgp 100
   neighbor 10.2.2.2 activate
   neighbor 10.2.2.2 send-community both
   exit-address-family
-!         
+!
 ip forward-protocol nd
 !
 !
@@ -128,9 +128,9 @@ mpls ldp router-id Loopback0 force
 control-plane
 !
 !
-!         
 !
-alias configure sh do sh 
+!
+alias configure sh do sh
 alias exec ospf sh run | s ^router ospf
 alias exec bri show ip int bri | exc unass
 alias exec id show int desc
