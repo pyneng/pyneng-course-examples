@@ -1,0 +1,9 @@
+nexthop: '1.1.1.1'
+outside: 'e0/1'
+yandex_dns: &yandex_dns '77.88.8.8'
+google_dns: &google_dns '8.8.8.4'
+ip_sla_id:
+  10: nexthop
+  20: *yandex_dns
+  30: *google_dns
+track_id: 100

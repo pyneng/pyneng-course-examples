@@ -13,7 +13,7 @@ to_yaml = {
              'switchport trunk native vlan 999',
              'switchport trunk allowed vlan'],
 }
-# to_yaml = {"access": True, "trunk": False}
 
-with open("yaml_files/result_13.yaml", "w") as f:
-    yaml.dump(to_yaml, f, default_flow_style=False)
+with open("yaml_files/result_15.yaml", "w") as f:
+    yaml.dump(to_yaml, f, default_flow_style=False, explicit_start=True)
+
