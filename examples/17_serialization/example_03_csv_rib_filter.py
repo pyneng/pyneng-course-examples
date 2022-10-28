@@ -8,6 +8,5 @@ with open("csv_files/rib_table.csv") as f, open("csv_files/result_ex03.csv", "w"
     headers = ["network", "netmask", "nexthop"]
     writer.writerow(headers)
     for row in reader:
-        values = [row[h] for h in headers]
+        values = [row[key] for key in headers]
         writer.writerow(values)
-        # writer.writerow([row["network"], row["netmask"], row["nexthop"]])
