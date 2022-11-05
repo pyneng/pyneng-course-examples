@@ -51,15 +51,8 @@ netmiko_set_standard = {
     "ValueError",
 }
 
-paramiko_set_standard = {
-    "EOFError",
-    "Exception",
-    "IOError",
-    "ImportError",
-    "KeyError",
-    "TypeError",
-    "ValueError",
-}
+
+## NETMIKO EXCEPTIONS
 
 NetmikoBaseException --- ConfigInvalidException
 |                 |
@@ -74,3 +67,44 @@ NetmikoBaseException --- ConfigInvalidException
                                         |
                                         -- netmiko.exceptions.NetmikoAuthenticationException
 
+
+## PARAMIKO EXCEPTIONS
+e='NoValidConnectionsError'
+[<class 'paramiko.ssh_exception.NoValidConnectionsError'>,
+ <class 'OSError'>,
+
+e='SSHException'
+[<class 'paramiko.ssh_exception.SSHException'>,
+
+e='IncompatiblePeer'
+[<class 'paramiko.ssh_exception.IncompatiblePeer'>,
+ <class 'paramiko.ssh_exception.SSHException'>,
+e='ConfigParseError'
+[<class 'paramiko.ssh_exception.ConfigParseError'>,
+ <class 'paramiko.ssh_exception.SSHException'>,
+e='PasswordRequiredException'
+[<class 'paramiko.ssh_exception.PasswordRequiredException'>,
+ <class 'paramiko.ssh_exception.AuthenticationException'>,
+ <class 'paramiko.ssh_exception.SSHException'>,
+e='CouldNotCanonicalize'
+[<class 'paramiko.ssh_exception.CouldNotCanonicalize'>,
+ <class 'paramiko.ssh_exception.SSHException'>,
+e='ProxyCommandFailure'
+[<class 'paramiko.ssh_exception.ProxyCommandFailure'>,
+ <class 'paramiko.ssh_exception.SSHException'>,
+e='BadHostKeyException'
+[<class 'paramiko.ssh_exception.BadHostKeyException'>,
+ <class 'paramiko.ssh_exception.SSHException'>,
+e='AuthenticationException'
+[<class 'paramiko.ssh_exception.AuthenticationException'>,
+ <class 'paramiko.ssh_exception.SSHException'>,
+
+paramiko_set_standard = {
+    "EOFError",
+    "Exception",
+    "IOError",
+    "ImportError",
+    "KeyError",
+    "TypeError",
+    "ValueError",
+}
