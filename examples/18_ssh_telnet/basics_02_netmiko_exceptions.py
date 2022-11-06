@@ -8,12 +8,13 @@ from netmiko import (
 
 
 common_params = {
-    "device_type": "cisco_ios",
+    "device_type": "cisco_ios_telnet",
     "username": "cisco",
     "password": "cisco",
     "secret": "cisco",
     # "port": "22222",
     "conn_timeout": 2,
+    "timeout": 5
 }
 
 
@@ -28,12 +29,13 @@ def get_show_output(device, command):
         NetmikoTimeoutException, # wrong ip/port
         NetmikoAuthenticationException, # username/password
         ReadTimeout, # wrong enable/prompt timeout
+        OSError # telnet connection
     ) as error:
         print(error)
 
 
 if __name__ == "__main__":
-    device_list = ["192.168.100.1", "192.168.100.2", "192.168.100.3"]
+    device_list = ["192.168.100.1", "192.168.100.11", "192.168.100.2", "192.168.100.3"]
     for ip in device_list:
         device = common_params.copy()
         device["host"] = ip
