@@ -17,6 +17,7 @@ with Netmiko(host="192.168.100.1", username="cisco", password="cisco",
     out = r1.send_command("sh clock")
     print(out)
 
+
 with Netmiko(**device) as r1:
     r1.enable()
     out = r1.send_command("sh clock")

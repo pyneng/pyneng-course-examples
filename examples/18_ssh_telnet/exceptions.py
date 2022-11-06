@@ -43,11 +43,6 @@ netmiko_set = {
 }
 
 netmiko_set_standard = {
-    "AttributeError",
-    "IOError",
-    "ImportError",
-    "ModuleNotFoundError",
-    "NotImplementedError",
     "ValueError",
 }
 
@@ -101,9 +96,7 @@ e='AuthenticationException'
 
 paramiko_set_standard = {
     "EOFError",
-    "Exception",
     "IOError",
-    "ImportError",
     "KeyError",
     "TypeError",
     "ValueError",
