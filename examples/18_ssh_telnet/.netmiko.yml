@@ -1,0 +1,25 @@
+---
+# Dictionaries are devices
+r1:
+  device_type: cisco_ios
+  host: 192.168.100.1
+  username: cisco
+  password: cisco
+  secret: cisco
+r2:
+  device_type: cisco_ios
+  host: 192.168.100.2
+  username: cisco
+  password: cisco
+  secret: cisco
+r3:
+  device_type: cisco_ios
+  host: 192.168.100.3
+  username: cisco
+  password: cisco
+  secret: cisco
+# Any list is group of devices
+cisco:
+  - r1 
+  - r2
+  - r3
