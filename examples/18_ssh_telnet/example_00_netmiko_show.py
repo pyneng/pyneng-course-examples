@@ -4,26 +4,19 @@ from paramiko.ssh_exception import SSHException
 import yaml
 
 
-def get_show_output(device_params, show_list):
-    if type(show_list) == str:
-        show_list = [show_list]
-
-    cmd_output_dict = {}
+def get_show_output(device_params, show):
     try:
         with Netmiko(**device_params) as ssh:
             ssh.enable()
-            for cmd in show_list:
-                out = ssh.send_command(cmd)
-                cmd_output_dict[cmd] = out
-        return cmd_output_dict
+            out = ssh.send_command(show)
+            return out
     except (NetmikoBaseException, SSHException) as error:
         print(error)
 
 
 if __name__ == "__main__":
-    cmd_list = ["sh clock", "sh ip int br"]
     with open("devices.yaml") as f:
         device_list = yaml.safe_load(f)
     for device in device_list:
-        result = get_show_output(device, cmd_list)
+        result = get_show_output(device, "sh ip int br | i up.*up")
         pprint(result, width=120)

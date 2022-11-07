@@ -2,7 +2,6 @@ import logging
 import netmiko
 from rich.logging import RichHandler
 
-
 logging.getLogger("paramiko").setLevel(logging.INFO)
 logging.getLogger("netmiko").setLevel(logging.INFO)
 
@@ -11,8 +10,7 @@ logging.basicConfig(
     datefmt="%H:%M:%S",
     style="{",
     level=logging.DEBUG,
-    handlers=[RichHandler()],
-    # handlers=[RichHandler(show_path=False)]
+    handlers=[RichHandler()]
 )
 
 def send_show(device, show):
