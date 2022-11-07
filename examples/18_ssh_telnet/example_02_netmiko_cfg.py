@@ -1,15 +1,15 @@
 from pprint import pprint
-from netmiko import Netmiko, NetmikoBaseException
+from netmiko import Netmiko, NetmikoBaseException # ConnectHandler
 from paramiko.ssh_exception import SSHException
 import yaml
 
 
 def configure_net_devices(device_params, commands):
     try:
-        with Netmiko(**device_params) as ssh:
-            ssh.enable()
-            cmd_output = ssh.send_config_set(commands)
-        return cmd_output
+        with Netmiko(**device_params) as conn:
+            conn.enable()
+            output = conn.send_config_set(commands)
+            return output
     except (NetmikoBaseException, SSHException) as error:
         print(error)
 

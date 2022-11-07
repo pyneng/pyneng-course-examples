@@ -26,8 +26,7 @@ if __name__ == "__main__":
         device_list = yaml.safe_load(f)
     r1 = device_list[0]
     result = configure_net_devices(
-        r1,
-        ["router ospf 1", "network 0.0.0.0 255.255.255.255 area 0"],
-        check_cmd="sh ip ospf", check_str="Routing Process"
+        r1, ["router ospf 1", "network 0.0.0.0 255.255.255.255 area 0"],
+        check_cmd="sh ip ospf", check_str="Ring Process"
     )
     pprint(result)
