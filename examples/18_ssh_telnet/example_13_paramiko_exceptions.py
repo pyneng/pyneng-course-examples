@@ -8,9 +8,9 @@ def cisco_send_show_command(
     host, username, password, enable_pass, command, max_read=60000,
     pause=0.5
 ):
-    client = paramiko.SSHClient()
-    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     try:
+        client = paramiko.SSHClient()
+        client.load_system_host_keys()
         client.connect(
             hostname=host,
             username=username,
@@ -43,6 +43,8 @@ def cisco_send_show_command(
                 return output.decode("utf-8")
             except OSError as error:
                 print(error)
+    finally:
+        client.close()
 
 
 if __name__ == "__main__":
