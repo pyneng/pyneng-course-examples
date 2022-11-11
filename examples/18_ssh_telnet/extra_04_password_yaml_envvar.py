@@ -1,7 +1,8 @@
 from pprint import pprint
 from netmiko import Netmiko, NetmikoBaseException
 from paramiko.ssh_exception import SSHException
-import yaml
+from pyaml_env import parse_config
+
 
 
 def get_show_output(device_params, show):
@@ -15,8 +16,8 @@ def get_show_output(device_params, show):
 
 
 if __name__ == "__main__":
-    with open("devices.yaml") as f:
-        device_list = yaml.safe_load(f)
+    device_list = parse_config('devices_envvar.yaml')
+    pprint(device_list)
     for device in device_list:
         result = get_show_output(device, "sh ip int br | i up.*up")
         pprint(result, width=120)

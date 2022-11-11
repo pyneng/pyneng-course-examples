@@ -15,11 +15,9 @@ def get_show_output(device_params, show):
 if __name__ == "__main__":
     with open("devices.yaml") as f:
         device_list = yaml.safe_load(f)
-	password = getpass()
-	secret = getpass("Enable: ")
+    passwd = getpass()
+    enable = getpass("Enable: ")
     for device in device_list:
-        device = {
-            **device, "password": password, "secret": secret,
-        }
+        device = {**device, "password": passwd, "secret": enable}
         result = get_show_output(device, "sh ip int br | i up.*up")
         pprint(result, width=120)

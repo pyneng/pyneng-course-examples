@@ -21,16 +21,14 @@ def send_command_to_cisco_devices(device_list, command):
 @click.command()
 @click.argument("command")
 @click.option("--yaml-params", "-y", type=click.File("r"), required=True)
-@click.option("--username", "-u", envvar="NET_USER", prompt=True)
-@click.option("--password", "-p", envvar="NET_PASSWORD", prompt=True, hide_input=True)
+@click.option("--password", "-p", envvar="SSH_PASSWORD", prompt=True, hide_input=True)
 @click.option("--secret", "-s", envvar="NET_SECRET", prompt=True, hide_input=True)
-def main(command, yaml_params, username, password, secret):
+def main(command, yaml_params, password, secret):
     devices = yaml.safe_load(yaml_params)
     device_list = []
     for dev in devices:
         params = {
             **dev,
-            "username": username,
             "password": password,
             "secret": secret,
         }

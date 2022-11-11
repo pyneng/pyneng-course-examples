@@ -1,0 +1,18 @@
+- device_type: cisco_ios_telnet
+  host: 192.168.100.1
+  username: cisco
+  password: !ENV ${SSH_PASSWORD}
+  secret: !ENV ${SSH_ENABLE_PASSWORD}
+  timeout: 10
+- device_type: cisco_ios
+  host: 192.168.100.2
+  username: cisco
+  password: !ENV ${SSH_PASSWORD}
+  secret: !ENV ${SSH_ENABLE_PASSWORD}
+  timeout: 10
+- device_type: cisco_ios
+  host: 192.168.100.3
+  username: cisco
+  password: !ENV ${SSH_PASSWORD}
+  secret: !ENV ${SSH_ENABLE_PASSWORD}
+  timeout: 10
