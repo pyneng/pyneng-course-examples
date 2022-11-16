@@ -48,7 +48,16 @@ def send_show(device_dict, command):
 def send_cmd_to_all(devices, command, threads=10):
     ip_out_dict = {}
     with ThreadPoolExecutor(max_workers=threads) as ex:  # create threads
-        result = ex.map(send_show, devices, repeat(command))
-        for device, output in zip(devices, result):
+        task_queue = [ex.submit(send_show, dev, command=command)
+                      for dev in devices]
+        for device, future in zip(devices, task_queue):
+            output = future.result()
             ip_out_dict[device["host"]] = output
     return ip_out_dict
+
+
+if __name__ == "__main__":
+    with open("devices.yaml") as f:
+        devices = yaml.safe_load(f)
+    cmd = "sh run | i hostname"
+    pprint(send_cmd_to_all(devices, cmd))

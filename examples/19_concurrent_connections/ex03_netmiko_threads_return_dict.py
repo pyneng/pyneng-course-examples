@@ -34,7 +34,7 @@ def send_show(device_dict, command):
             logging.info(f"Отправляю команду {device} {command}")
             output = conn.send_command(command)
             logging.info(f"<<< Получили вывод {device}")
-            return output
+            return {device: output}
     except (
         NetmikoAuthenticationException,
         socket.timeout,
@@ -43,12 +43,18 @@ def send_show(device_dict, command):
         logging.info(f"Ошибка {error} при подключении к {device}")
     except NetmikoBaseException as error:
         logging.info(f"Ошибка netmiko {error} при подключении к {device}")
+    return {device: None}
 
 
-def send_cmd_to_all(devices, command, threads=10):
+with open("devices.yaml") as f:
+    devices = yaml.safe_load(f)
+
+cmd = "sh run | i hostname"
+
+with ThreadPoolExecutor(max_workers=5) as ex:  # create threads
     ip_out_dict = {}
-    with ThreadPoolExecutor(max_workers=threads) as ex:  # create threads
-        result = ex.map(send_show, devices, repeat(command))
-        for device, output in zip(devices, result):
-            ip_out_dict[device["host"]] = output
-    return ip_out_dict
+    result = ex.map(send_show, devices, repeat(cmd))
+    for result_dict in result:
+        if result_dict:
+            ip_out_dict.update(result_dict)
+    pprint(ip_out_dict)

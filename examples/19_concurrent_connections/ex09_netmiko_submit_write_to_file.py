@@ -45,10 +45,20 @@ def send_show(device_dict, command):
         logging.info(f"Ошибка netmiko {error} при подключении к {device}")
 
 
-def send_cmd_to_all(devices, command, threads=10):
-    ip_out_dict = {}
+def send_cmd_to_all(devices, command, out_to_file, threads=10):
     with ThreadPoolExecutor(max_workers=threads) as ex:  # create threads
-        result = ex.map(send_show, devices, repeat(command))
-        for device, output in zip(devices, result):
-            ip_out_dict[device["host"]] = output
-    return ip_out_dict
+        task_queue = [ex.submit(send_show, dev, command=command)
+                      for dev in devices]
+        with open(out_to_file, "w") as f:
+            for future in task_queue:
+                output = future.result()
+                if output:
+                    f.write(output)
+                    f.write("\n")
+
+
+if __name__ == "__main__":
+    with open("devices.yaml") as f:
+        devices = yaml.safe_load(f)
+    cmd = "sh run | i hostname"
+    pprint(send_cmd_to_all(devices, cmd, "result.txt"))

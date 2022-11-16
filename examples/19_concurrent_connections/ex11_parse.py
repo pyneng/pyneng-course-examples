@@ -5,6 +5,7 @@ import time
 import logging
 import random
 from itertools import repeat
+import re
 
 import yaml
 from netmiko import (
@@ -45,6 +46,12 @@ def send_show(device_dict, command):
         logging.info(f"Ошибка netmiko {error} при подключении к {device}")
 
 
+def parse_sh_ip_int_br(output):
+    regex = r"^(\S+) +([\d.]+|unassigned) +\w+ +"
+    result = [m.groups() for m in re.finditer(regex, output, re.MULTILINE)]
+    return result
+
+
 def send_cmd_to_all(devices, command, threads=10):
     ip_out_dict = {}
     with ThreadPoolExecutor(max_workers=threads) as ex:  # create threads
@@ -52,3 +59,13 @@ def send_cmd_to_all(devices, command, threads=10):
         for device, output in zip(devices, result):
             ip_out_dict[device["host"]] = output
     return ip_out_dict
+
+
+if __name__ == "__main__":
+    with open("devices.yaml") as f:
+        devices = yaml.safe_load(f)
+    cmd = "sh ip int br"
+    result_dict = send_cmd_to_all(devices, cmd)
+    for ip, out in result_dict.items():
+        if out:
+            print(parse_sh_ip_int_br(out))
