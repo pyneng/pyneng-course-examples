@@ -33,11 +33,14 @@ def send_show_to_devices(device_list, command, threads=5):
     host_output_dict = {}
     with ThreadPoolExecutor(max_workers=threads) as ex:
         all_results = ex.map(send_show, device_list, repeat(command))
-        for out in all_results:
-            pprint(out)
+        for device, out in zip(device_list, all_results):
+            host = device["host"]
+            host_output_dict[host] = out
+    return host_output_dict
 
 
 if __name__ == "__main__":
     with open("devices.yaml") as f:
         devices = yaml.safe_load(f)
     data = send_show_to_devices(devices, "sh clock")
+    pprint(data)
