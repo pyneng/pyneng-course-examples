@@ -18,30 +18,26 @@ logging.basicConfig(
 
 
 def send_show(device_dict, command):
-    device = device_dict["host"]
-    logging.info(f">>> Подключаюсь {device}")
-    try:
-        with Netmiko(**device_dict) as conn:
-            conn.enable()
-            logging.info(f"Отправляю команду {device} {command}")
-            output = conn.send_command(command)
-            logging.info(f"<<< Получили вывод {device}")
-            return output
-    except (NetmikoBaseException, SSHException) as error:
-        print(error)
+    host = device_dict["host"]
+    logging.info(f">>> Подключаюсь к {host}")
+    with Netmiko(**device_dict) as conn:
+        conn.enable()
+        logging.debug(f"Отправляю команду {command} на {host}")
+        output = conn.send_command(command)
+        logging.info(f"<<< Получили вывод {host}")
+        return output
+        # return host, output
 
 
-def send_cmd_to_all(devices, command, threads=10):
-    ip_out_dict = {}
-    with ThreadPoolExecutor(max_workers=threads) as ex:  # create threads
-        result = ex.map(send_show, devices, repeat(command))
-        for device, output in zip(devices, result):
-            ip_out_dict[device["host"]] = output
-    return ip_out_dict
+def send_show_to_devices(device_list, command, threads=5):
+    host_output_dict = {}
+    with ThreadPoolExecutor(max_workers=threads) as ex:
+        all_results = ex.map(send_show, device_list, repeat(command))
+        for out in all_results:
+            pprint(out)
 
 
 if __name__ == "__main__":
     with open("devices.yaml") as f:
         devices = yaml.safe_load(f)
-    cmd = "sh run | i hostname"
-    pprint(send_cmd_to_all(devices, cmd))
+    data = send_show_to_devices(devices, "sh clock")
