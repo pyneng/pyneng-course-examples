@@ -20,16 +20,12 @@ logging.basicConfig(
 def send_show(device_dict, command):
     device = device_dict["host"]
     logging.info(f">>> Подключаюсь {device}")
-    try:
-        with Netmiko(**device_dict) as conn:
-            conn.enable()
-            logging.info(f"Отправляю команду {device} {command}")
-            output = conn.send_command(command)
-            logging.info(f"<<< Получили вывод {device}")
-            return output
-    except (NetmikoBaseException, SSHException) as error:
-        logging.error(f"Возникло исключение на {device}")
-        logging.debug(error)
+    with Netmiko(**device_dict) as conn:
+        conn.enable()
+        logging.info(f"Отправляю команду {device} {command}")
+        output = conn.send_command(command)
+        logging.info(f"<<< Получили вывод {device}")
+        return output
 
 
 def send_show_to_devices(device_list, command, threads=5):
@@ -42,8 +38,12 @@ def send_show_to_devices(device_list, command, threads=5):
         # task_queue = [ex.submit(send_show, device, command) for device in device_list]
         for device, task in zip(device_list, task_queue):
             host = device["host"]
-            output = task.result()
-            host_output_dict[host] = output
+            exc = task.exception()
+            if exc:
+                host_output_dict[host] = exc
+            else:
+                output = task.result()
+                host_output_dict[host] = output
     return host_output_dict
 
 

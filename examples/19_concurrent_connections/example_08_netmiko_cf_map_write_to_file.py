@@ -5,8 +5,6 @@ from itertools import repeat
 
 import yaml
 from netmiko import Netmiko, NetmikoBaseException
-from paramiko.ssh_exception import SSHException
-
 
 logging.getLogger("paramiko").setLevel(logging.WARNING)
 logging.getLogger("netmiko").setLevel(logging.WARNING)
@@ -22,15 +20,13 @@ logging.basicConfig(
 def send_show(device_dict, command):
     host = device_dict["host"]
     logging.info(f">>> Подключаюсь к {host}")
-    try:
-        with Netmiko(**device_dict) as conn:
-            conn.enable()
-            logging.debug(f"Отправляю команду {command} на {host}")
-            output = conn.send_command(command)
-            logging.info(f"<<< Получили вывод {host}")
-            return output
-    except (NetmikoBaseException, SSHException) as error:
-        logging.error(f"Возникла ошибка на {host} {error}")
+    with Netmiko(**device_dict) as conn:
+        conn.enable()
+        logging.debug(f"Отправляю команду {command} на {host}")
+        output = conn.send_command(command)
+        logging.info(f"<<< Получили вывод {host}")
+        return output
+        # return host, output
 
 
 def send_show_to_devices(device_list, command, threads=5):
