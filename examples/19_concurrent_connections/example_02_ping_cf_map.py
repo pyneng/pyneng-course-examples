@@ -15,10 +15,14 @@ def ping_ip(ip):
         return False
 
 
-ip_list = ["8.8.8.8", "192.168.100.22", "192.168.100.1"]
-with ThreadPoolExecutor(max_workers=3) as ex:
-    result = ex.map(ping_ip, ip_list)
-    for ip, status in zip(ip_list, result):
+ip_list = [
+    "8.8.8.8", "192.168.100.22", "192.168.100.1",
+    "192.168.100.11", "192.168.100.12",
+    "192.168.100.31", "192.168.100.32",
+]
+with ThreadPoolExecutor(max_workers=10) as ex:
+    result_all = ex.map(ping_ip, ip_list)
+    for ip, status in zip(ip_list, result_all):
         if status:
             rprint(f"[green]Пингуется {ip}")
         else:
