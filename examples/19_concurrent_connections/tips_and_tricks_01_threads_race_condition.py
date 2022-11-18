@@ -7,7 +7,7 @@ account = {"balance": 1000}
 
 def get_bunny(id, amount=1):
     print(f"get_bunny {id} {amount=}")
-    time.sleep(random.random())
+    time.sleep(random.random() * 4)
     balance = account["balance"]
     if amount < balance:
         time.sleep(random.random())
@@ -20,7 +20,7 @@ def get_bunny(id, amount=1):
         return False
 
 
-def count_bunnies(bunny_total, limit_threads=100):
+def count_bunnies(bunny_total, limit_threads=20):
     with ThreadPoolExecutor(max_workers=limit_threads) as executor:
         results = executor.map(get_bunny, range(bunny_total))
         for output in results:
@@ -28,5 +28,5 @@ def count_bunnies(bunny_total, limit_threads=100):
 
 
 if __name__ == "__main__":
-    count_bunnies(bunny_total=200)
+    count_bunnies(bunny_total=60)
     print(account)

@@ -12,7 +12,7 @@ logging.getLogger("paramiko").setLevel(logging.WARNING)
 logging.getLogger("netmiko").setLevel(logging.WARNING)
 
 logging.basicConfig(
-    filename="log_example09.log",
+    filename="log_ex09.log",
     format="{threadName} {asctime} {name} {levelname} {message}",
     style="{",
     level=logging.DEBUG,
@@ -38,6 +38,7 @@ def send_show_to_devices(device_list, command, threads=5):
         for device in device_list:
             task = ex.submit(send_show, device, command)
             task_queue.append(task)
+        # task_queue = [ex.submit(send_show, device, command) for device in device_list]
         for task in track(as_completed(task_queue), total=len(device_list)):
             host, output = task.result()
             host_output_dict[host] = output
@@ -48,4 +49,4 @@ if __name__ == "__main__":
     with open("devices.yaml") as f:
         devices = yaml.safe_load(f)
     cmd = "sh run | i hostname"
-    send_show_to_devices(devices, cmd)
+    pprint(send_show_to_devices(devices, cmd), sort_dicts=False)
