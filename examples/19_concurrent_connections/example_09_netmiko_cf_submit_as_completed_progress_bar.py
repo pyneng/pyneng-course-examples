@@ -7,9 +7,6 @@ import random
 import yaml
 from netmiko import Netmiko, NetmikoBaseException
 from rich.progress import track
-from rich.progress import Progress
-
-
 
 logging.getLogger("paramiko").setLevel(logging.WARNING)
 logging.getLogger("netmiko").setLevel(logging.WARNING)
@@ -41,13 +38,9 @@ def send_show_to_devices(device_list, command, threads=5):
         for device in device_list:
             task = ex.submit(send_show, device, command)
             task_queue.append(task)
-        # task_queue = [ex.submit(send_show, device, command) for device in device_list]
-        with Progress() as progress:
-            t1 = progress.add_task("Подключаюсь...", total=len(device_list))
-            for task in as_completed(task_queue):
-                progress.update(t1, advance=1)
-                host, output = task.result()
-                host_output_dict[host] = output
+        for task in track(as_completed(task_queue), total=len(device_list)):
+            host, output = task.result()
+            host_output_dict[host] = output
     return host_output_dict
 
 
@@ -55,4 +48,4 @@ if __name__ == "__main__":
     with open("devices.yaml") as f:
         devices = yaml.safe_load(f)
     cmd = "sh run | i hostname"
-    # pprint(send_show_to_devices(devices, cmd), sort_dicts=False)
+    send_show_to_devices(devices, cmd)
