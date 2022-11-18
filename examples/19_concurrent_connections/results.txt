@@ -1,0 +1,32 @@
+
+192.168.100.1
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                192.168.100.1   YES NVRAM  up                    up      
+Ethernet0/1                192.168.200.1   YES NVRAM  up                    up      
+Ethernet0/2                unassigned      YES NVRAM  up                    up      
+Ethernet0/3                192.168.130.1   YES NVRAM  up                    up      
+Loopback11                 11.1.1.1        YES NVRAM  up                    up      
+Loopback55                 5.5.5.5         YES NVRAM  up                    up      
+Loopback99                 unassigned      YES unset  up                    up      
+Loopback100                10.1.1.100      YES NVRAM  up                    up      
+Loopback142                unassigned      YES unset  up                    up      
+Loopback200                10.2.2.2        YES NVRAM  up                    up      
+Tunnel0                    10.255.1.1      YES NVRAM  up                    down    
+Tunnel1                    unassigned      YES unset  up                    down    
+Tunnel9                    unassigned      YES unset  up                    down    
+192.168.100.2
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                192.168.100.2   YES NVRAM  up                    up      
+Ethernet0/1                10.100.23.2     YES NVRAM  up                    up      
+Ethernet0/2                unassigned      YES NVRAM  administratively down down    
+Ethernet0/3                unassigned      YES NVRAM  administratively down down    
+Loopback0                  10.2.2.2        YES NVRAM  up                    up      
+Loopback9                  unassigned      YES unset  up                    up      
+Loopback19                 unassigned      YES unset  up                    up      
+Loopback100                10.100.100.2    YES NVRAM  up                    up      
+192.168.100.3
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                192.168.100.3   YES NVRAM  up                    up      
+Ethernet0/1                10.100.23.3     YES NVRAM  up                    up      
+Ethernet0/2                unassigned      YES NVRAM  administratively down down    
+Ethernet0/3                unassigned      YES NVRAM  administratively down down    

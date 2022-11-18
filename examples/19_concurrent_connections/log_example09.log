@@ -1,0 +1,162 @@
+ThreadPoolExecutor-0_0 2022-11-18 13:36:23,666 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_1 2022-11-18 13:36:23,666 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_2 2022-11-18 13:36:23,678 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:36:23,685 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_4 2022-11-18 13:36:23,687 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_0 2022-11-18 13:36:26,733 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_0 2022-11-18 13:36:27,150 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_0 2022-11-18 13:36:27,167 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:36:27,219 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_2 2022-11-18 13:36:27,683 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:36:27,896 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_3 2022-11-18 13:36:27,908 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_2 2022-11-18 13:36:28,452 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_4 2022-11-18 13:36:28,452 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_1 2022-11-18 13:36:28,478 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_2 2022-11-18 13:36:28,485 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_4 2022-11-18 13:36:29,163 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_4 2022-11-18 13:36:29,354 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_1 2022-11-18 13:36:29,361 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_2 2022-11-18 13:36:30,463 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_0 2022-11-18 13:36:30,538 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_2 2022-11-18 13:36:30,853 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_0 2022-11-18 13:36:30,904 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:36:31,350 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_4 2022-11-18 13:36:31,733 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:36:31,737 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_4 2022-11-18 13:36:31,994 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_0 2022-11-18 13:37:31,217 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_1 2022-11-18 13:37:31,220 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_2 2022-11-18 13:37:31,222 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:37:31,226 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_4 2022-11-18 13:37:31,235 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_0 2022-11-18 13:37:33,855 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_3 2022-11-18 13:37:33,862 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_0 2022-11-18 13:37:34,183 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_3 2022-11-18 13:37:34,433 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_0 2022-11-18 13:37:34,443 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:37:34,455 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_1 2022-11-18 13:37:35,217 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_4 2022-11-18 13:37:35,226 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_2 2022-11-18 13:37:35,262 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_1 2022-11-18 13:37:35,677 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_2 2022-11-18 13:37:35,688 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_2 2022-11-18 13:37:35,727 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_4 2022-11-18 13:37:35,903 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_1 2022-11-18 13:37:35,918 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:37:37,294 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_3 2022-11-18 13:37:37,699 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_0 2022-11-18 13:37:38,025 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_0 2022-11-18 13:37:38,277 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_2 2022-11-18 13:37:38,622 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_2 2022-11-18 13:37:38,911 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_1 2022-11-18 13:37:38,919 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_1 2022-11-18 13:37:39,161 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_0 2022-11-18 13:37:52,817 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_1 2022-11-18 13:37:52,823 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_2 2022-11-18 13:37:52,825 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:37:52,828 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_4 2022-11-18 13:37:52,829 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_4 2022-11-18 13:37:55,443 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_1 2022-11-18 13:37:55,539 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_4 2022-11-18 13:37:55,749 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_4 2022-11-18 13:37:55,772 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:37:56,331 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_1 2022-11-18 13:37:56,334 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_1 2022-11-18 13:37:56,356 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_2 2022-11-18 13:37:56,780 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:37:56,981 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_3 2022-11-18 13:37:56,991 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_0 2022-11-18 13:37:57,064 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_2 2022-11-18 13:37:57,626 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_0 2022-11-18 13:37:57,627 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_0 2022-11-18 13:37:57,640 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_4 2022-11-18 13:37:58,335 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_4 2022-11-18 13:37:58,590 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:37:58,949 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_3 2022-11-18 13:37:59,258 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_1 2022-11-18 13:37:59,894 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_1 2022-11-18 13:38:00,233 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_0 2022-11-18 13:38:00,383 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_0 2022-11-18 13:38:00,625 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_0 2022-11-18 13:38:09,121 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_2 2022-11-18 13:38:09,122 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_1 2022-11-18 13:38:09,122 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_3 2022-11-18 13:38:09,122 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_4 2022-11-18 13:38:09,127 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_0 2022-11-18 13:38:11,282 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_1 2022-11-18 13:38:11,337 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_0 2022-11-18 13:38:11,741 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_0 2022-11-18 13:38:11,752 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_2 2022-11-18 13:38:11,818 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_1 2022-11-18 13:38:11,829 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_1 2022-11-18 13:38:11,850 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_3 2022-11-18 13:38:11,872 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_2 2022-11-18 13:38:12,507 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_2 2022-11-18 13:38:12,697 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_3 2022-11-18 13:38:13,145 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_3 2022-11-18 13:38:13,156 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_4 2022-11-18 13:38:13,370 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_4 2022-11-18 13:38:13,817 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_1 2022-11-18 13:38:14,289 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_1 2022-11-18 13:38:14,634 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_2 2022-11-18 13:38:14,712 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_0 2022-11-18 13:38:14,991 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_2 2022-11-18 13:38:15,053 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_0 2022-11-18 13:38:15,253 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:38:15,347 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:38:15,584 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_0 2022-11-18 13:38:22,006 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_1 2022-11-18 13:38:22,006 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_4 2022-11-18 13:38:22,007 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_3 2022-11-18 13:38:22,007 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_2 2022-11-18 13:38:22,007 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_1 2022-11-18 13:38:24,965 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_2 2022-11-18 13:38:25,190 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_1 2022-11-18 13:38:25,270 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_1 2022-11-18 13:38:25,284 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_2 2022-11-18 13:38:25,464 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_2 2022-11-18 13:38:25,486 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_4 2022-11-18 13:38:26,289 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_0 2022-11-18 13:38:26,333 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_3 2022-11-18 13:38:26,334 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_4 2022-11-18 13:38:26,816 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_0 2022-11-18 13:38:26,826 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_4 2022-11-18 13:38:26,837 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_3 2022-11-18 13:38:27,104 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_0 2022-11-18 13:38:27,106 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_2 2022-11-18 13:38:28,095 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_2 2022-11-18 13:38:28,498 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_1 2022-11-18 13:38:29,359 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_0 2022-11-18 13:38:29,421 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_1 2022-11-18 13:38:29,590 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_0 2022-11-18 13:38:29,832 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_4 2022-11-18 13:38:30,756 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_4 2022-11-18 13:38:31,084 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_0 2022-11-18 13:38:41,998 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_1 2022-11-18 13:38:41,998 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_2 2022-11-18 13:38:42,005 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:38:42,013 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_4 2022-11-18 13:38:42,156 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_1 2022-11-18 13:38:44,425 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_1 2022-11-18 13:38:44,772 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_1 2022-11-18 13:38:44,783 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_4 2022-11-18 13:38:44,815 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_4 2022-11-18 13:38:45,471 root INFO <<< Получили вывод 192.168.100.2
+ThreadPoolExecutor-0_4 2022-11-18 13:38:45,482 root INFO >>> Подключаюсь к 192.168.100.1
+ThreadPoolExecutor-0_0 2022-11-18 13:38:45,932 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_3 2022-11-18 13:38:45,986 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_2 2022-11-18 13:38:46,063 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_0 2022-11-18 13:38:46,342 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_0 2022-11-18 13:38:46,361 root INFO >>> Подключаюсь к 192.168.100.2
+ThreadPoolExecutor-0_3 2022-11-18 13:38:46,745 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_3 2022-11-18 13:38:46,775 root INFO >>> Подключаюсь к 192.168.100.3
+ThreadPoolExecutor-0_2 2022-11-18 13:38:47,290 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_4 2022-11-18 13:38:47,772 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.1
+ThreadPoolExecutor-0_4 2022-11-18 13:38:48,174 root INFO <<< Получили вывод 192.168.100.1
+ThreadPoolExecutor-0_1 2022-11-18 13:38:48,237 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_1 2022-11-18 13:38:48,562 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:38:48,980 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.3
+ThreadPoolExecutor-0_3 2022-11-18 13:38:49,220 root INFO <<< Получили вывод 192.168.100.3
+ThreadPoolExecutor-0_0 2022-11-18 13:38:50,059 root DEBUG Отправляю команду sh run | i hostname на 192.168.100.2
+ThreadPoolExecutor-0_0 2022-11-18 13:38:50,362 root INFO <<< Получили вывод 192.168.100.2
