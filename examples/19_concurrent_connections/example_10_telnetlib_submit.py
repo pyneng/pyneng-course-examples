@@ -29,14 +29,13 @@ def send_show_to_devices(device_list, command, threads=5):
     host_output_dict = {}
     with ThreadPoolExecutor(max_workers=threads) as ex:
         task_queue = []
-        for device in device_list:
-            task = ex.submit(get_cisco_show_output, **device, command=command)
+        for dev in device_list:
+            task = ex.submit(get_cisco_show_output, **dev, command=command)
             task_queue.append(task)
-        # task_queue = [ex.submit(send_show, device, command) for device in device_list]
-        for device, task in zip(device_list, task_queue):
-            host = device["host"]
-            output = task.result()
-            host_output_dict[host] = output
+        for dev, task in zip(device_list, task_queue):
+            host = dev["host"]
+            out = task.result()
+            host_output_dict[host] = out
     return host_output_dict
 
 
