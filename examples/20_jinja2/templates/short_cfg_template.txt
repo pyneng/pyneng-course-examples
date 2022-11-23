@@ -7,7 +7,7 @@ interface Loopback255
 interface GigabitEthernet0/0
  ip address {{ip}} 255.255.255.0
 !
-router ospf {{ process_id }}
+router ospf {{ process_id | default(1) }}
  router-id 10.255.{{id}}.1
  auto-cost reference-bandwidth 10000
  network 10.0.0.0 0.255.255.255 area 0
