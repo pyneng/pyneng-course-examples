@@ -1,0 +1,4 @@
+All vlans:
+ {% for vl in vlans %}
+ vlan {{ vl }}
+ {% endfor %}
