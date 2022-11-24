@@ -1,10 +1,11 @@
-id: test
 name: R3
+log_servers:
+  - 10.1.1.1
+  - 10.2.2.2
 vlans:
   14: Marketing
   12: Voice
   10: Management
-ref_bw: false
 ospf:
   - network: 10.0.1.0 0.0.0.255
     area: 0

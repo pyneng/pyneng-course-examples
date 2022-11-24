@@ -7,9 +7,11 @@ interface Loopback0
 vlan {{ vl }}
 {% endfor %}
 
+
+{{ ospf['network'] }}
+{{ ospf.network }}
+
 router ospf 1
  router-id 10.0.0.{{ id }}
  auto-cost reference-bandwidth 10000
- network {{ ospf['network'] }} area {{ ospf['area'] }}
- network {{ ospf.network }} area {{ ospf.area }}
 

@@ -12,3 +12,10 @@ vlan {{ vlan }}
 {% endif %}
 {% endfor %}
 
+{% if ospf %}
+router ospf 1
+{% for net in ospf %}
+ network {{ net['network'] }} area {{ net['area'] }}
+{# network {{ net.network }} area {{ net.area }} #}
+{% endfor %}
+{% endif %}
