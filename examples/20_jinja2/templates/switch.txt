@@ -1,3 +1,5 @@
 hostname {{name}}
+
 {% include 'vlans.txt' %}
+
 {% include 'ospf.txt' %}
