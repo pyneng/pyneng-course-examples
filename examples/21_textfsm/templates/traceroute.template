@@ -1,4 +1,5 @@
-Value ip ([\d.]+)
+Value nh_id (\d+)
+Value nhop ([\d.]+)
 
 Start
- ^ +\d+ +${ip} +\d+ -> Record
+ ^ +${nh_id} +${nhop} -> Record
