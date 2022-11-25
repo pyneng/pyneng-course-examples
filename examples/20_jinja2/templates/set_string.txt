@@ -1,0 +1,5 @@
+{% for vl, name in vlans | dictsort %}
+{% set vl = vl | string %}
+vlan {{ vl.zfill(4) }}
+ name {{ name }}
+{% endfor %}
