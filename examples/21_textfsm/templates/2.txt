@@ -1,7 +1,0 @@
-Value vlan (\S+)
-Value Key mac ([\w:]+)
-Value port (\S+)
-
-Start
-  ^ *${vlan} +${mac} +${port} +\S+$$ -> Record
-

@@ -1,5 +1,0 @@
-Value ip (\S+)
-Value Key mac (\S+)
-
-Start
-  ^${ip}.+dynamic +${mac} -> Record
