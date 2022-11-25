@@ -5,3 +5,4 @@ ospf:
     area: 2
   - network: 10.1.1.0 0.0.0.255
     area: 0
+ref_bw: 50000

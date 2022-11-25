@@ -1,0 +1,8 @@
+hostname {{ name }}
+
+interface Loopback0
+{% if id is number %}
+ ip address 10.255.0.{{ id }} 255.255.255.255
+{% elif id is ip_address %}
+ ip address {{ id }} 255.255.255.255
+{% endif %}

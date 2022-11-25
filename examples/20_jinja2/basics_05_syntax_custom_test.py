@@ -2,6 +2,7 @@
 from pprint import pprint
 import sys
 import os
+import ipaddress
 
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 import yaml
@@ -14,12 +15,21 @@ template_dir, template_file = os.path.split(sys.argv[1])
 vars_file = sys.argv[2]
 
 
+def is_ip_address(ip):
+    try:
+        ipaddress.IPv4Address(ip)
+        return True
+    except ValueError:
+        return False
+
+
 env = Environment(
     loader=FileSystemLoader(template_dir),
     trim_blocks=True,
     lstrip_blocks=True,
     # undefined=StrictUndefined,
 )
+env.tests["ip_address"] = is_ip_address
 template = env.get_template(template_file)
 
 with open(vars_file) as f:

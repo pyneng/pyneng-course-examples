@@ -14,12 +14,18 @@ template_dir, template_file = os.path.split(sys.argv[1])
 vars_file = sys.argv[2]
 
 
+def add_0(number, zeroes=4):
+    return str(number).zfill(zeroes)
+
+
 env = Environment(
     loader=FileSystemLoader(template_dir),
     trim_blocks=True,
     lstrip_blocks=True,
     # undefined=StrictUndefined,
 )
+env.filters["add_zero"] = add_0
+# pprint(env.filters)
 template = env.get_template(template_file)
 
 with open(vars_file) as f:
