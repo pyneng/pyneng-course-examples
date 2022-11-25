@@ -1,0 +1,6 @@
+vlans:
+  12: Voice
+  14: Marketing
+  10: Management
+  100: IT
+
