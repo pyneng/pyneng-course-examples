@@ -1,10 +1,5 @@
-trunks:
-  Fa0/1:
-    action: add
-    vlans: 10,20
-  Fa0/2:
-    action: only
-    vlans: 10,30
-  Fa0/3:
-    action: delete
-    vlans: 10
+access_vlans:
+  Gi0/6: 110
+  Gi0/3: 105
+  Gi0/1: 202
+  Gi0/2: 113
