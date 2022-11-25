@@ -1,7 +1,7 @@
-Value interface (\S+)
-Value ipaddress (\S+)
+Value intf (\S+)
+Value ip (\S+)
 Value status (up|down|administratively down)
 Value protocol (up|down)
 
 Start
- ^${interface}\s+${ipaddress}\s+\w+\s+\w+\s+${status}\s+${protocol} -> Record
+ ^${intf} +${ip} +\w+ +\w+ +${status} +${protocol} -> Record

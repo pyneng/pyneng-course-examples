@@ -1,0 +1,9 @@
+Value Filldown local_name (\S+)
+Value Required local_intf (\S+ \S+)
+Value remote_name (\S+)
+Value remote_intf (\S+ \S+)
+
+Start
+ ^${local_name}[#>]
+ ^${remote_name} +${local_intf} +\d+ +.+ +${remote_intf}$$ -> Record
+
