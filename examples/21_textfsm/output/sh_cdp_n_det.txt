@@ -54,4 +54,3 @@ Duplex: full
 Management address(es):
   IP address: 10.2.255.2
 
-Data

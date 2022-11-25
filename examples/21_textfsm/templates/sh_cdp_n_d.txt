@@ -1,21 +1,18 @@
-Value Filldown l_hostname (\S+)
-Value Required n_hostname (\S+)
-Value n_ip (\S+)
-Value l_port (\S+)
-Value n_port (\S+)
-Value n_ios (\S+)
-Value List n_mgmnt_ip (\S+)
+Value Filldown local_name (\S+)
+Value Required remote_name (\S+)
+Value remote_ip (\S+)
+Value remote_platform (.+)
+Value remote_ios (\S+)
+Value List remote_mngmt_ip (\S+)
 
 Start
- ^${l_hostname}[#>]sh
- ^Device ID: ${n_hostname}
- ^ +IP address: ${n_ip}
- ^Interface: +${l_port}, .+: ${n_port}
- ^Cisco IOS Software,.+, Version ${n_ios},
- ^Management address -> MngmtIP
- ^---- -> Record
+ ^${local_name}[#>]
+ ^Device ID: ${remote_name}
+ ^Entry address -> EntryIP
+ ^Cisco IOS Software.+Version ${remote_ios},
+ ^ +IP address: ${remote_mngmt_ip}
+ ^---+ -> Record
 
-MngmtIP
- ^ +IP address: ${n_mgmnt_ip}
- ^.* -> Record Start
-
+EntryIP
+ ^ +IP address: ${remote_ip}
+ ^Platform: ${remote_platform}, -> Start
