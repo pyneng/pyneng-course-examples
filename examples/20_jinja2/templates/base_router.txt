@@ -7,7 +7,6 @@ service sequence-numbers
 {% endblock %}
 !
 no ip domain lookup
-!
 ip ssh version 2
 !
 {% block ospf %}
@@ -15,17 +14,12 @@ router ospf 1
  auto-cost reference-bandwidth 10000
 {% endblock %}
 !
-{% raw %}
 {% block bgp %}
 {% endblock %}
-{% endraw %}
 !
 {% block alias required %}
 {% endblock %}
 !
-line con 0
- logging synchronous
- history size 100
 line vty 0 4
  logging synchronous
  history size 100
