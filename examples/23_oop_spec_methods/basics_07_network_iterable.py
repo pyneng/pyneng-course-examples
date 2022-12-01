@@ -21,14 +21,10 @@ class Network:
         print(f"__getitem__ {index=}")
         return self.hosts[index]
 
+    def __iter__(self):
+        print("__iter__")
+        return iter(self.hosts)
+
 
 if __name__ == "__main__":
     net1 = Network("10.1.1.0", 29)
-    print(net1)
-    print(net1.hosts)
-    print(net1[0])
-    print(net1[-1])
-    print(net1[0:4])
-    print("10.1.1.1" in net1)
-    for ip in net1:
-        print(ip)
