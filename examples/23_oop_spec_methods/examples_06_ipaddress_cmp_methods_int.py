@@ -44,11 +44,3 @@ ip2 = IPAddress("10.2.2.2", 25)
 ip3 = IPAddress("10.1.1.1", 25)
 ip4 = IPAddress("10.10.1.1", 25)
 ip5 = IPAddress("10.1.1.1", 29)
-
-
-#    def __lt__(self, second_ip):
-#        return self._int_ip < second_ip._int_ip
-#        if self._int_ip < second_ip._int_ip:
-#            return True
-#        else:
-#            return False
