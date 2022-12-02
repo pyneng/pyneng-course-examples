@@ -3,20 +3,20 @@ import re
 
 
 class FilterFile:
-    def __init__(self, file_object, filter_regex):
-        self.file_object = file_object
+    def __init__(self, file_obj, filter_regex):
+        self.file_obj = file_obj
         self.filter_regex = filter_regex
 
     def __next__(self):
         print("__next__")
-        for line in self.file_object:
+        while True:
+            line = next(self.file_obj)
+            print(f">>>> {line=}")
             match_line = re.search(self.filter_regex, line)
             if match_line:
                 return line
-        raise StopIteration
 
     def __iter__(self):
-        print("__iter__")
         return self
 
 
