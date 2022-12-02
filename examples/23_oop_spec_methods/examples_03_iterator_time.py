@@ -28,6 +28,6 @@ if __name__ == "__main__":
 
     print(f"{next(ct)} START")
     for device, ctime in zip(devices, ct):
-        out = get_show_output(device, "sh run | i hostname")
         print(ctime)
+        out = get_show_output(device, "sh run | i hostname")
         print(out)
