@@ -3,13 +3,6 @@ from netmiko import Netmiko, NetmikoBaseException
 import yaml
 
 
-def get_show_output(device_params, show):
-    with Netmiko(**device_params) as ssh:
-        ssh.enable()
-        out = ssh.send_command(show)
-        return out
-
-
 class CurrentTime:
     def __next__(self):
         print("__next__")
@@ -17,17 +10,24 @@ class CurrentTime:
         return str(now)
 
     def __iter__(self):
-        print("__iter__")
         return self
+
+
+def get_show_output(device_params, show):
+    with Netmiko(**device_params) as ssh:
+        ssh.enable()
+        out = ssh.send_command(show)
+        return out
 
 
 if __name__ == "__main__":
     with open("devices.yaml") as f:
         devices = yaml.safe_load(f)
-    ct = CurrentTime()
 
-    print(f"{next(ct)} START")
+    ct = CurrentTime()
     for device, ctime in zip(devices, ct):
         print(ctime)
-        out = get_show_output(device, "sh run | i hostname")
-        print(out)
+        output = get_show_output(device, "sh run | i hostname")
+        print(output)
+        output = get_show_output(device, "sh run | i alias")
+        print(output)
