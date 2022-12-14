@@ -1,6 +1,5 @@
-INSERT into switch (mac, model, location, hostname)
+INSERT into switch (mac, hostname, model, location)
 values
-   ('0010.A1AA.C1CC', 'sw1', 'Cisco 3750', 'London, Green Str'),
    ('0020.A2AA.C2CC', 'sw2', 'Cisco 3850', 'London, Green Str'),
    ('0030.A3AA.C3CC', 'sw3', 'Cisco 3750', 'London, Green Str'),
    ('0040.A4AA.C4CC', 'sw4', 'Cisco 3850', 'London, Green Str'),
