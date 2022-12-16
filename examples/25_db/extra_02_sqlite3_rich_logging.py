@@ -21,10 +21,7 @@ con = sqlite3.connect('sw_inventory2.db')
 con.set_trace_callback(logging.debug)
 
 con.execute('''create table if not exists switch
-            (mac text not NULL primary key,
-            hostname text,
-            model text,
-            location text)'''
+            (mac text not NULL primary key, hostname text, model text, location text)'''
             )
 
 query = 'INSERT into switch values (?, ?, ?, ?)'
@@ -32,7 +29,8 @@ query = 'INSERT into switch values (?, ?, ?, ?)'
 #    with con:
 #        con.execute(query, row)
 
-con.executemany(query, data)
+with con:
+    con.executemany(query, data)
 
 for row in con.execute('select * from switch'):
     print(row)
