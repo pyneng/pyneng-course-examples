@@ -35,7 +35,7 @@ data = [
 admins = [
     {"email": "john@gmail.com", "name": "John Brown", "permissions": 10},
     {"email": "jessica@gmail.com", "name": "Jessica Newman", "permissions": 0},
-    {"email": "tom@gmail.com", "name": "Tom Green", "permissions": 55},
+#    {"email": "tom@gmail.com", "name": "Tom Green", "permissions": 55},
 ]
 
 con = sqlite3.connect("switch_inv_11.db")
@@ -47,8 +47,9 @@ cursor.executescript(query_create)
 for row in data:
     cursor.execute(query_insert, row)
 
-for row_dict in admins:
-    cursor.execute(query_insert_adm, row_dict)
+#for row_dict in admins:
+#    cursor.execute(query_insert_adm, row_dict)
+cursor.executemany(query_insert_adm, admins)
 
 con.commit()
 con.close()
