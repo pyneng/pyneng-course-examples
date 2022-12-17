@@ -1,13 +1,6 @@
 import sqlite3
 import logging
 
-logging.basicConfig(
-    format="{asctime} {name} {levelname} {message}",
-    datefmt="%H:%M:%S",
-    style="{",
-    level=logging.DEBUG,
-)
-
 query_create = """
 create table switch (
     mac text not NULL primary key,
@@ -35,8 +28,16 @@ data = [
 admins = [
     {"email": "john@gmail.com", "name": "John Brown", "permissions": 10},
     {"email": "jessica@gmail.com", "name": "Jessica Newman", "permissions": 0},
-#    {"email": "tom@gmail.com", "name": "Tom Green", "permissions": 55},
+    # {"email": "tom@gmail.com", "name": "Tom Green", "permissions": 55},
 ]
+
+logging.basicConfig(
+    format="{asctime} {name} {levelname} {message}",
+    datefmt="%H:%M:%S",
+    style="{",
+    level=logging.DEBUG,
+)
+
 
 con = sqlite3.connect("switch_inv_11.db")
 con.set_trace_callback(logging.debug)
@@ -47,8 +48,8 @@ cursor.executescript(query_create)
 for row in data:
     cursor.execute(query_insert, row)
 
-#for row_dict in admins:
-#    cursor.execute(query_insert_adm, row_dict)
+# for row_dict in admins:
+#     cursor.execute(query_insert_adm, row_dict)
 cursor.executemany(query_insert_adm, admins)
 
 con.commit()
