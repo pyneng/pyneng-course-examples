@@ -1,0 +1,4 @@
+ip,hostname,location
+192.168.100.1,r1,"London, 21 New Globe Walk"
+192.168.100.2,r2,"London, 21 New Globe Walk"
+192.168.100.3,r3,"London, 21 New Globe Walk"

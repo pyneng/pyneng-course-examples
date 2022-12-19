@@ -40,7 +40,19 @@ def send_show_to_devices(device_list, command, threads=5):
 
 
 def parse_sh_ip_int_br(output):
-    regex = re.compile(r"")
+    regex = re.compile(
+        r"(\S+) +(\S+) +\w+ \w+ +(administratively down|up|down) +(up|down)"
+    )
+    sh_ip_int_br = [m.groups() for m in re.finditer(regex, output)]
+    return sh_ip_int_br
+
+
+def parse_output(parse_function, host_output_dict):
+    host_parsed_dict = {}
+    for host, output in host_output_dict.items():
+        host_parsed_dict[host] = parse_function(output)
+    return host_parsed_dict
+
 
 
 if __name__ == "__main__":
