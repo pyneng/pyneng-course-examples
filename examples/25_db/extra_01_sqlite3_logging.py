@@ -24,8 +24,8 @@ con.execute('''create table if not exists switch
             )
 
 query = 'INSERT into switch values (?, ?, ?, ?)'
-con.executemany(query, data)
-con.commit()
+with con:
+    con.executemany(query, data)
 
 for row in con.execute('select * from switch'):
     print(row)
