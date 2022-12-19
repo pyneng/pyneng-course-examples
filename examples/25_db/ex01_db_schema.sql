@@ -8,7 +8,7 @@ create table devices (
 
 create table interfaces (
     device       text not null references devices(ip)
-    interface    text,
+    interface    text not null,
     ip           text,
-    status       text,
+    status       text check (status in ('up', 'down')),
 );
