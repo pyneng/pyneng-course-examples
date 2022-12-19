@@ -1,0 +1,8 @@
+R2#show ip interface brief
+
+Interface             IP-Address      OK? Method Status         Protocol
+FastEthernet0/0       10.0.15.2       YES manual up             up
+FastEthernet0/1       10.0.12.2       YES manual up             up
+FastEthernet0/2       unassigned      YES manual up             down
+FastEthernet0/3       unassigned      YES unset  up             down
+Loopback0             192.168.100.2   YES manual up             up
