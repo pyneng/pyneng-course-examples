@@ -1,6 +1,6 @@
 -- Schema
 
-create table devices (
+create table if not exists devices (
     ip          text not null primary key,
     hostname    text not null,
     location    text

@@ -3,8 +3,7 @@ import csv
 from glob import glob
 import sqlite3
 from pprint import pprint
-
-from examples_01_get_output import parse_sh_ip_int_br, parse_show_output
+import re
 
 
 # create DB, tables
@@ -19,38 +18,32 @@ with open(schema) as s:
 
 # add devices
 devices_csv = "ex01_routers.csv"
-insert_query = "INSERT into devices values (:ip, :hostname, :location)"
+insert_csv = "INSERT into devices values (:ip, :hostname, :location)"
 
-with open(devices_csv) as f:
-    reader = csv.DictReader(f)
+with open(devices_csv) as d:
+    reader = csv.DictReader(d)
     with con:
         for row in reader:
-            con.execute(insert_query, row)
+            con.execute(insert_csv, row)
 
 # parse interfaces
-intf_files = glob("show_output/sh_ip_int_br_*.txt")
+intf_files = sorted(glob("show_output/sh_ip_int_br_*.txt"))
+insert_intf = "INSERT into interfaces values (?, ?, ?, ?)"
 
-intf_list = []
+regex = re.compile(
+    r"(\S+) +(\S+) +\w+ +\w+ +(?:administratively down|up|down) +(up|down)"
+)
+
 for intf_f in intf_files:
+    device = intf_f.split("_")[-1].split(".")[0]
     with open(intf_f) as f:
-        out = f.read()
-    device = intf_f.split("_")[-1].split(".")[-2]
-    parsed_out = parse_sh_ip_int_br(out)
-    for intf, ip, _, status in parsed_out:
-        if ip == "unassigned":
-            ip = None
-        intf_tuple = (device, intf, ip, status)
-        intf_list.append(intf_tuple)
-
-# add interfaces
-insert_query = "INSERT into interfaces values (?, ?, ?, ?)"
-with con:
-    con.executemany(insert_query, intf_list)
-
-
-for row in con.execute("select * from devices"):
-    print(row)
-for row in con.execute("select * from interfaces"):
-    print(row)
+        for line in f:
+            match_intf = regex.search(line)
+            if match_intf:
+                intf, ip, status = match_intf.groups()
+                if ip == "unassigned":
+                    ip = None
+                with con:
+                    con.execute(insert_intf, [device, intf, ip, status])
 
 con.close()
