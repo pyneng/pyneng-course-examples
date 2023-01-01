@@ -5,3 +5,4 @@ def lower(item):
 
 
 print(sorted(words, key=lower))
+print(sorted(words, key=lambda item: item.lower()))
