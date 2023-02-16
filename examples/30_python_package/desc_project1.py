@@ -8,10 +8,10 @@
 print("Import connect.py")
 
 def connect_ssh(ip):
-    print("Connect SSH to {}".format(ip))
+    print(f"Connect SSH to {ip}")
 
 def connect_telnet(ip):
-    print("Connect Telnet to {}".format(ip))
+    print(f"Connect Telnet to {ip}")
 
 
 # exceptions.py
